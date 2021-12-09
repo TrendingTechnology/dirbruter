@@ -43,7 +43,7 @@ cd dirbruter
 
 `Usage:`
 
-```powershell
+```cmd
 python dirbrute.py -f <força do ataque> -u <url_alvo>
 ```
 
