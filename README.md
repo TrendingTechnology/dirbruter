@@ -11,10 +11,10 @@
   <img src="https://i.pinimg.com/originals/c8/3b/4d/c83b4df038332911aa1dbc32b5960700.jpg"width="250px">
 </p>
 
-> Simples brute forcer de diretorios feito em python.
+> Simples brute forcer de diretorios para web pentest.
 
 ## ❕ Atenção
-* Não ataque sites privados. isto é illegal.
+* Não ataque sites privados. Isto é illegal.
 
 ## 🖥️ Pré-requisitos
 * Ultima versão do `Python3` `Python 3.9.9 ou Python 3.10`.
@@ -27,7 +27,7 @@ python --version
 ## ☕ Utilização
 `Clone` o repositorio usando:
 
-```powershell
+```
 git clone https://github.com/DioBruh/dirbruter/
 ```
 
@@ -43,7 +43,7 @@ cd dirbruter
 
 `Usage:`
 
-```
+```powershell
 python dirbrute.py -f <força do ataque> -u <url_alvo>
 ```
 
