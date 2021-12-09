@@ -103,6 +103,9 @@ class args():
         if args.f == 'brute' and args.u:
             if args.u[-1] != '/':
                 args.u += '/'
+                if not 'http://' in args.u and not "https://" in args.u:
+                    http = "".join("http://"+args.u)
+                    args.u = http
                 basic.banner()
                 print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
                 try:
@@ -124,6 +127,9 @@ class args():
         if args.f == 'middle' and args.u:
             if args.u[-1] != '/':
                 args.u += '/'
+                if not 'http://' in args.u and not "https://" in args.u:
+                    http = "".join("http://"+args.u)
+                    args.u = http
                 basic.banner()
                 print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
                 try:
@@ -143,6 +149,9 @@ class args():
         if args.f == 'light' and args.u:
             if args.u[-1] != '/':
                 args.u += '/'
+                if not 'http://' in args.u and not "https://" in args.u:
+                    http = "".join("http://"+args.u)
+                    args.u = http
                 basic.banner()
                 print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
                 try:
@@ -163,6 +172,14 @@ class args():
             print('error!')
             print('quiting!')
             exit(0)
+    
+    def setURL(http):
+        if not "http://" in http and not \
+                "https://" in http:
+            http = "".join("http://" + http)
+
+        return http
+
 
 
 class lists():
@@ -176,8 +193,7 @@ class lists():
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
-                        cls()
-                        basic.banner()
+                        continue
 
                 except ConnectionRefusedError:
                     cls()
@@ -201,8 +217,7 @@ class lists():
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
-                        cls()
-                        basic.banner()
+                        continue
 
                 except ConnectionRefusedError:
                     cls()
@@ -226,16 +241,14 @@ class lists():
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
-                        print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
-                        cls()
-                        basic.banner()
+                        continue
 
                 except ConnectionRefusedError:
                     cls()
                     print('Ocured an error!')
                     print('quitting!')
                     exit(1)
-                    
+
                 except KeyboardInterrupt:
                     print(f'Quiting.')
                     exit(0)
