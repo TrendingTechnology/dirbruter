@@ -27,17 +27,17 @@ python --version
 ## ☕ Utilização
 `Clone` o repositorio usando:
 
-```
+```powershell
 git clone https://github.com/DioBruh/tools-hacking
 ```
 
 `Navegue` até a pasta do scanner utilizando:
 
-```
+```powershell
 cd tools-hacking
 ```
 
-```
+```powershell
 cd dirbruter
 ```
 
