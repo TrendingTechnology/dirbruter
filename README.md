@@ -28,7 +28,7 @@ python --version
 `Clone` o repositorio usando:
 
 ```powershell
-git clone https://github.com/DioBruh/tools-hacking
+git clone https://github.com/DioBruh/dirbruter/
 ```
 
 `Navegue` até a pasta do scanner utilizando:
