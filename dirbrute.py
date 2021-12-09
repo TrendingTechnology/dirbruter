@@ -23,7 +23,7 @@ def hour():
 # trying import libs.
 
 try:
-    setup.setup()
+    from requests import get
 except:
     print(f'{cl}[{vermcl}'+'%X'+f'{cl}] Trying install requests.')
     try:
@@ -101,44 +101,68 @@ class args():
 
 
         if args.f == 'brute' and args.u:
-            basic.banner()
-            print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
-            try:
-                lists.brute(website=args.u)
-            except KeyboardInterrupt:
-                print(f'An error has ocurred.')
-                print('Quitting.')
-                exit(0)
+            if args.u[-1] != '/':
+                args.u += '/'
+                basic.banner()
+                print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
+                try:
+                    lists.brute(website=args.u)
+                except KeyboardInterrupt:
+                    print(f'An error has ocurred.')
+                    print('Quitting.')
+                    exit(0)
+            else:
+                basic.banner()
+                print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
+                try:
+                    lists.brute(website=args.u)
+                except KeyboardInterrupt:
+                    print('An error has ocurrred.')
+                    print('Quitting.')
+                    exit(0)
 
         if args.f == 'middle' and args.u:
-            basic.banner()
-            print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
-            try:
-                lists.middle(website=args.u)
-            except KeyboardInterrupt:
-                print(f'An error has occurred.')
-                print('Quitting.')
-                exit(1)
+            if args.u[-1] != '/':
+                args.u += '/'
+                basic.banner()
+                print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
+                try:
+                    lists.middle(website=args.u)
+                except KeyboardInterrupt:
+                    print(f'An error has occurred.')
+                    print('Quitting.')
+                    exit(1)
+            else:
+                try:
+                    lists.middle(website=args.u)
+                except KeyboardInterrupt:
+                    print('An error has ocurred.')
+                    print('Quitting.')
+                    exit(0)
 
         if args.f == 'light' and args.u:
-            basic.banner()
-            print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
-            try:
-                lists.light(website=args.u)
-            except KeyboardInterrupt:
-                print(f'An error has ocurred.')
-                print('Quitting.')
-                exit(1)
+            if args.u[-1] != '/':
+                args.u += '/'
+                basic.banner()
+                print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' Attacking: {args.u}'))
+                try:
+                    lists.light(website=args.u)
+                except KeyboardInterrupt:
+                    print(f'An error has occurred.')
+                    print('Quitting.')
+                    exit(1)
+            else:
+                try:
+                    lists.light(website=args.u)
+                except KeyboardInterrupt:
+                    print('An error has ocurred.')
+                    print('Quitting.')
+                    exit(0)
         
         else:
             print('error!')
             print('quiting!')
             exit(0)
-        
-            
-
-
-
 
 
 class lists():
@@ -154,6 +178,12 @@ class lists():
                     else:
                         cls()
                         basic.banner()
+
+                except ConnectionRefusedError:
+                    cls()
+                    print('Ocured an error!')
+                    print('quitting!')
+                    exit(1)
 
                 except:
                     cls()
@@ -174,8 +204,13 @@ class lists():
                         cls()
                         basic.banner()
 
-
-                except:
+                except ConnectionRefusedError:
+                    cls()
+                    print('Ocured an error!')
+                    print('quitting!')
+                    exit(1)
+                
+                except KeyboardInterrupt:
                     cls()
                     print(f'Ocurred an error!')
                     print(f'Quitting!')
@@ -195,6 +230,12 @@ class lists():
                         cls()
                         basic.banner()
 
+                except ConnectionRefusedError:
+                    cls()
+                    print('Ocured an error!')
+                    print('quitting!')
+                    exit(1)
+                    
                 except KeyboardInterrupt:
                     print(f'Quiting.')
                     exit(0)
