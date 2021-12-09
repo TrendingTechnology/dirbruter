@@ -17,7 +17,7 @@
 * Não ataque sites privados. isto é illegal.
 
 ## 🖥️ Pré-requisitos
-* Ultima versão do `Python3`.
+* Ultima versão do `Python3` `Python 3.9.9 ou Python 3.10`.
 para verificar isto, é bem simples. Basta digitar:
 
 ```powershell
