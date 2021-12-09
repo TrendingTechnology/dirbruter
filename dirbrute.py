@@ -8,7 +8,6 @@ amacl = '\033[1;93m'
 cl = '\033[1;97m'
 verd = '\033[1;32m'
 
-
 from src import banner
 from os import  system
 from requests.models import Request
@@ -50,7 +49,7 @@ from requests import get
 
 class basic():
     def banner():
-        banner.basic.banner()
+        src.banner.banner()
 
 
 class args():
@@ -253,7 +252,6 @@ class lists():
                     print(f'Quiting.')
                     exit(0)
 
-    
 try:
     args.arg()
 
