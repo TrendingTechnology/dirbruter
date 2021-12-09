@@ -1,5 +1,5 @@
 
-## 🦑 dirbruter
+<h1 align="">🦑 dirbruter</h2>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/DioBruh/dirbruter?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/DioBruh/dirbruter?style=for-the-badge)
@@ -7,7 +7,7 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/DioBruh/dirbruter?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/DioBruh/dirbruter?style=for-the-badge)
 
-<p>
+<p align="">
   <img src="https://i.pinimg.com/originals/c8/3b/4d/c83b4df038332911aa1dbc32b5960700.jpg"width="250px">
 </p>
 
