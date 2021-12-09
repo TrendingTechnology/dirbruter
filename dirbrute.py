@@ -49,7 +49,7 @@ from requests import get
 
 class basic():
     def banner():
-        src.banner.banner()
+        banner.basic.banner()
 
 
 class args():
@@ -171,14 +171,6 @@ class args():
             print('error!')
             print('quiting!')
             exit(0)
-    
-    def setURL(http):
-        if not "http://" in http and not \
-                "https://" in http:
-            http = "".join("http://" + http)
-
-        return http
-
 
 
 class lists():
@@ -188,7 +180,7 @@ class lists():
             li = f.readlines()
             for l in li:
                 try:
-                    r=get(f'{website}/{l.strip()}')
+                    r=get(f'{website}{l.strip()}')
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
@@ -212,7 +204,7 @@ class lists():
         with open('wordlists/common.txt') as file:
             for line in file:
                 try:
-                    r=get(f'{website}/{line.strip()}')
+                    r=get(f'{website}{line.strip()}')
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
@@ -236,7 +228,7 @@ class lists():
             op = b.readlines()
             for i in op:
                 try:
-                    r=get(f'{website}/{i.strip()}')
+                    r=get(f'{website}{i.strip()}')
                     if r.status_code == 200:
                             print(strftime(f'{cl}[{vermcl}'+'%X'+f'{cl}]'+f' {r.url}'))
                     else:
@@ -254,7 +246,6 @@ class lists():
 
 try:
     args.arg()
-
 except KeyboardInterrupt:
     print('Quitting!')
     exit(0)
