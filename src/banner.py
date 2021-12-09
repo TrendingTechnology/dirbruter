@@ -20,4 +20,5 @@ class basic():
 ░░▐▄▌▒▌░▌░░▐░▐▄▌░░
 ░░░░░▐░░▐░░▌░░░░░░
 Not attack private websites. This is illegal!
+My github: https://github.com/DioBruh/
         ''')
